@@ -138,6 +138,7 @@ namespace CRUDWinFormsMVP.Views
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(737, 307);
             this.dataGridView.TabIndex = 7;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // label2
             // 

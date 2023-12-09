@@ -22,7 +22,7 @@ namespace CRUDWinFormsMVP.Views
         public event EventHandler ShowOwnerView;
         public event EventHandler ShowVetsView;
 
-        private void btnPets_Click(object sender, EventArgs e)
+        private void btnEvents_Click(object sender, EventArgs e)
         {
 
         }

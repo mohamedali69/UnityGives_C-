@@ -58,13 +58,14 @@ namespace CRUDWinFormsMVP.Presenters
         }
         private void LoadSelectedEventToEdit(object sender, EventArgs e)
         {
-            var pet = (EventModel) eventsBindingSource.Current;
-            view.EventId = pet.Id.ToString();
-            view.EventName = pet.Name;
-            view.EventType = pet.Type;
-            view.EventDescription = pet.Description;
+            var selectedEvent = (EventModel)eventsBindingSource.Current;
+            view.EventId = selectedEvent.Id.ToString();
+            view.EventName = selectedEvent.Name;
+            view.EventType = selectedEvent.Type;
+            view.EventDescription = selectedEvent.Description;
             view.IsEdit = true;
         }
+
         private void SaveEvent(object sender, EventArgs e)
         {
             var model = new EventModel();
@@ -75,15 +76,15 @@ namespace CRUDWinFormsMVP.Presenters
             try
             {
                 new Common.ModelDataValidation().Validate(model);
-                if(view.IsEdit)//Edit model
+                if (view.IsEdit)//Edit model
                 {
                     repository.Edit(model);
-                    view.Message = "Event edited successfuly";
+                    view.Message = "Event edited successfully";
                 }
                 else //Add new model
                 {
                     repository.Add(model);
-                    view.Message = "Event added sucessfully";
+                    view.Message = "Event added successfully";
                 }
                 view.IsSuccessful = true;
                 LoadAllEventList();
@@ -112,8 +113,8 @@ namespace CRUDWinFormsMVP.Presenters
         {
             try
             {
-                var pet = (EventModel)eventsBindingSource.Current;
-                repository.Delete(pet.Id);
+                var selectedEvent = (EventModel)eventsBindingSource.Current;
+                repository.Delete(selectedEvent.Id);
                 view.IsSuccessful = true;
                 view.Message = "Event deleted successfully";
                 LoadAllEventList();
@@ -121,7 +122,7 @@ namespace CRUDWinFormsMVP.Presenters
             catch (Exception ex)
             {
                 view.IsSuccessful = false;
-                view.Message = "An error ocurred, could not delete Event";
+                view.Message = "An error occurred, could not delete the Event";
             }
         }
 

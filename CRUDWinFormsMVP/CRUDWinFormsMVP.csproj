@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\IPetRepository.cs" />
+    <Compile Include="Models\IEventRepository.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />

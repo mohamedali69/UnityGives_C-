@@ -54,7 +54,7 @@ namespace CRUDWinFormsMVP.Views
             this.btnEvents.TabIndex = 0;
             this.btnEvents.Text = "Events";
             this.btnEvents.UseVisualStyleBackColor = true;
-            this.btnEvents.Click += new System.EventHandler(this.btnPets_Click);
+            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
             // 
             // MainView
             // 

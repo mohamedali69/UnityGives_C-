@@ -24,10 +24,10 @@ namespace CRUDWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into Event values (@name, @type, @colour)";
+                command.CommandText = "insert into Event values (@name, @type, @description)";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventModel.Name;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = eventModel.Type;
-                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = eventModel.Description;
+                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = eventModel.Description;
                 command.ExecuteNonQuery();
             }
         }
@@ -51,11 +51,11 @@ namespace CRUDWinFormsMVP._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"update Event 
-                                        set Event_Name=@name,Event_Type= @type,Event_Colour= @colour 
+                                        set Event_Name=@name,Event_Type= @type,Event_Description= @description 
                                         where Event_Id=@id";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventModel.Name;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = eventModel.Type;
-                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = eventModel.Description;
+                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = eventModel.Description;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = eventModel.Id;
                 command.ExecuteNonQuery();
             }
