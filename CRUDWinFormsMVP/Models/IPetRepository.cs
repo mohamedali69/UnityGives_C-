@@ -8,11 +8,11 @@ namespace CRUDWinFormsMVP.Models
 {
    public interface IPetRepository
     {
-        void Add(PetModel petModel);
-        void Edit(PetModel petModel);
+        void Add(EventModel eventModel);
+        void Edit(EventModel eventModel);
         void Delete(int id);
-        IEnumerable<PetModel> GetAll();
-        IEnumerable<PetModel> GetByValue(string value);//Searchs
+        IEnumerable<EventModel> GetAll();
+        IEnumerable<EventModel> GetByValue(string value);//Searchs
 
     }
 }

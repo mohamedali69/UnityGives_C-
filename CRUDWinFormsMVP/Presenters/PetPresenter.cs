@@ -12,13 +12,13 @@ namespace CRUDWinFormsMVP.Presenters
     public class PetPresenter
     {
         //Fields
-        private IPetView view;
+        private IEventView view;
         private IPetRepository repository;
         private BindingSource petsBindingSource;
-        private IEnumerable<PetModel> petList;
+        private IEnumerable<EventModel> petList;
 
         //Constructor
-        public PetPresenter(IPetView view, IPetRepository repository)
+        public PetPresenter(IEventView view, IPetRepository repository)
         {
             this.petsBindingSource = new BindingSource();
             this.view = view;
@@ -58,20 +58,20 @@ namespace CRUDWinFormsMVP.Presenters
         }
         private void LoadSelectedPetToEdit(object sender, EventArgs e)
         {
-            var pet = (PetModel)petsBindingSource.Current;
+            var pet = (EventModel)petsBindingSource.Current;
             view.PetId = pet.Id.ToString();
             view.PetName = pet.Name;
             view.PetType = pet.Type;
-            view.PetColour = pet.Colour;
+            view.PetColour = pet.Description;
             view.IsEdit = true;
         }
         private void SavePet(object sender, EventArgs e)
         {
-            var model = new PetModel();
+            var model = new EventModel();
             model.Id = Convert.ToInt32(view.PetId);
             model.Name = view.PetName;
             model.Type = view.PetType;
-            model.Colour = view.PetColour;
+            model.Description = view.PetColour;
             try
             {
                 new Common.ModelDataValidation().Validate(model);
@@ -112,7 +112,7 @@ namespace CRUDWinFormsMVP.Presenters
         {
             try
             {
-                var pet = (PetModel)petsBindingSource.Current;
+                var pet = (EventModel)petsBindingSource.Current;
                 repository.Delete(pet.Id);
                 view.IsSuccessful = true;
                 view.Message = "Pet deleted successfully";

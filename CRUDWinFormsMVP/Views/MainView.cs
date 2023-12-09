@@ -15,10 +15,10 @@ namespace CRUDWinFormsMVP.Views
         public MainView()
         {
             InitializeComponent();
-            btnPets.Click += delegate { ShowPetView?.Invoke(this, EventArgs.Empty); };
+            btnEvents.Click += delegate { ShowEventView?.Invoke(this, EventArgs.Empty); };
         }
 
-        public event EventHandler ShowPetView;
+        public event EventHandler ShowEventView;
         public event EventHandler ShowOwnerView;
         public event EventHandler ShowVetsView;
 

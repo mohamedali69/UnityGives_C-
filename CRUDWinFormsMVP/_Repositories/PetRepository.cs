@@ -17,7 +17,7 @@ namespace CRUDWinFormsMVP._Repositories
             this.connectionString = connectionString;
         }
         //Methods
-        public void Add(PetModel petModel)
+        public void Add(EventModel petModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -27,7 +27,7 @@ namespace CRUDWinFormsMVP._Repositories
                 command.CommandText = "insert into Pet values (@name, @type, @colour)";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = petModel.Name;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = petModel.Type;
-                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = petModel.Colour;
+                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = petModel.Description;
                 command.ExecuteNonQuery();
             }
         }
@@ -43,7 +43,7 @@ namespace CRUDWinFormsMVP._Repositories
                 command.ExecuteNonQuery();
             }
         }
-        public void Edit(PetModel petModel)
+        public void Edit(EventModel eventModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -53,17 +53,17 @@ namespace CRUDWinFormsMVP._Repositories
                 command.CommandText = @"update Pet 
                                         set Pet_Name=@name,Pet_Type= @type,Pet_Colour= @colour 
                                         where Pet_Id=@id";
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = petModel.Name;
-                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = petModel.Type;
-                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = petModel.Colour;
-                command.Parameters.Add("@id", SqlDbType.Int).Value = petModel.Id;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventModel.Name;
+                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = eventModel.Type;
+                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = eventModel.Description;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = eventModel.Id;
                 command.ExecuteNonQuery();
             }
         }
 
-        public IEnumerable<PetModel> GetAll()
+        public IEnumerable<EventModel> GetAll()
         {
-            var petList = new List<PetModel>();
+            var petList = new List<EventModel>();
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
@@ -74,11 +74,11 @@ namespace CRUDWinFormsMVP._Repositories
                 {
                     while (reader.Read())
                     {
-                        var petModel = new PetModel();
+                        var petModel = new EventModel();
                         petModel.Id = (int)reader[0];
                         petModel.Name = reader[1].ToString();
                         petModel.Type = reader[2].ToString();
-                        petModel.Colour = reader[3].ToString();
+                        petModel.Description = reader[3].ToString();
                         petList.Add(petModel);
                     }
                 }
@@ -86,9 +86,9 @@ namespace CRUDWinFormsMVP._Repositories
             return petList;
         }
 
-        public IEnumerable<PetModel> GetByValue(string value)
+        public IEnumerable<EventModel> GetByValue(string value)
         {
-            var petList = new List<PetModel>();
+            var petList = new List<EventModel>();
             int petId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
             string petName = value;
             using (var connection = new SqlConnection(connectionString))
@@ -106,11 +106,11 @@ namespace CRUDWinFormsMVP._Repositories
                 {
                     while (reader.Read())
                     {
-                        var petModel = new PetModel();
+                        var petModel = new EventModel();
                         petModel.Id = (int)reader[0];
                         petModel.Name = reader[1].ToString();
                         petModel.Type = reader[2].ToString();
-                        petModel.Colour = reader[3].ToString();
+                        petModel.Description = reader[3].ToString();
                         petList.Add(petModel);
                     }
                 }

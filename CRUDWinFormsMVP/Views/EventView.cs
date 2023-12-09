@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CRUDWinFormsMVP.Views
 {
-    public partial class PetView : Form, IPetView
+    public partial class EventView : Form, IEventView
     {
         //Fields
         private string message;
@@ -18,11 +18,11 @@ namespace CRUDWinFormsMVP.Views
         private bool isEdit;
 
         //Constructor
-        public PetView()
+        public EventView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
-            tabControl1.TabPages.Remove(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPageEventDetail);
             btnClose.Click += delegate { this.Close(); };
         }
 
@@ -39,17 +39,17 @@ namespace CRUDWinFormsMVP.Views
             btnAddNew.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabPagePetList);
-                tabControl1.TabPages.Add(tabPagePetDetail);
-                tabPagePetDetail.Text = "Add new pet";
+                tabControl1.TabPages.Remove(tabPageEventList);
+                tabControl1.TabPages.Add(tabPageEventDetail);
+                tabPageEventDetail.Text = "Add new pet";
             };
             //Edit
             btnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabPagePetList);
-                tabControl1.TabPages.Add(tabPagePetDetail);
-                tabPagePetDetail.Text = "Edit pet";
+                tabControl1.TabPages.Remove(tabPageEventList);
+                tabControl1.TabPages.Add(tabPageEventDetail);
+                tabPageEventDetail.Text = "Edit pet";
             };
             //Save changes
             btnSave.Click += delegate
@@ -57,8 +57,8 @@ namespace CRUDWinFormsMVP.Views
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(tabPagePetDetail);
-                    tabControl1.TabPages.Add(tabPagePetList);
+                    tabControl1.TabPages.Remove(tabPageEventDetail);
+                    tabControl1.TabPages.Add(tabPageEventList);
                 }
                 MessageBox.Show(Message);
             };
@@ -66,8 +66,8 @@ namespace CRUDWinFormsMVP.Views
             btnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabPagePetDetail);
-                tabControl1.TabPages.Add(tabPagePetList);
+                tabControl1.TabPages.Remove(tabPageEventDetail);
+                tabControl1.TabPages.Add(tabPageEventList);
             };
             //Delete
             btnDelete.Click += delegate
@@ -85,26 +85,26 @@ namespace CRUDWinFormsMVP.Views
         //Properties
         public string PetId
         {
-            get { return txtPetId.Text; }
-            set { txtPetId.Text = value; }
+            get { return txtEventId.Text; }
+            set { txtEventId.Text = value; }
         }
 
         public string PetName
         {
-            get { return txtPetName.Text; }
-            set { txtPetName.Text = value; }
+            get { return txtEventName.Text; }
+            set { txtEventName.Text = value; }
         }
 
         public string PetType
         {
-            get { return txtPetType.Text; }
-            set { txtPetType.Text = value; }
+            get { return txtEventType.Text; }
+            set { txtEventType.Text = value; }
         }
 
         public string PetColour
         {
-            get { return txtPetColour.Text; }
-            set { txtPetColour.Text = value; }
+            get { return txtEventDescription.Text; }
+            set { txtEventDescription.Text = value; }
         }
 
         public string SearchValue
@@ -146,12 +146,12 @@ namespace CRUDWinFormsMVP.Views
         }
 
         //Singleton pattern (Open a single form instance)
-        private static PetView instance;
-        public static PetView GetInstace(Form parentContainer)
+        private static EventView instance;
+        public static EventView GetInstace(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new PetView();
+                instance = new EventView();
                 instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
@@ -163,6 +163,26 @@ namespace CRUDWinFormsMVP.Views
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EventView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

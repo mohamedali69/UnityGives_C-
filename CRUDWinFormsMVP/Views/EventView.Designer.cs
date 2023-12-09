@@ -3,7 +3,7 @@ using System;
 
 namespace CRUDWinFormsMVP.Views
 {
-    partial class PetView
+    partial class EventView
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@ namespace CRUDWinFormsMVP.Views
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.tabPageEventList = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -43,22 +43,22 @@ namespace CRUDWinFormsMVP.Views
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.tabPagePetDetail = new System.Windows.Forms.TabPage();
+            this.tabPageEventDetail = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPetColour = new System.Windows.Forms.TextBox();
+            this.txtEventDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPetType = new System.Windows.Forms.TextBox();
+            this.txtEventType = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPetName = new System.Windows.Forms.TextBox();
+            this.txtEventName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPetId = new System.Windows.Forms.TextBox();
+            this.txtEventId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPagePetList.SuspendLayout();
+            this.tabPageEventList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.tabPagePetDetail.SuspendLayout();
+            this.tabPageEventDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -96,8 +96,8 @@ namespace CRUDWinFormsMVP.Views
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPagePetList);
-            this.tabControl1.Controls.Add(this.tabPagePetDetail);
+            this.tabControl1.Controls.Add(this.tabPageEventList);
+            this.tabControl1.Controls.Add(this.tabPageEventDetail);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
@@ -105,23 +105,23 @@ namespace CRUDWinFormsMVP.Views
             this.tabControl1.Size = new System.Drawing.Size(892, 411);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPagePetList
+            // tabPageEventList
             // 
-            this.tabPagePetList.Controls.Add(this.dataGridView);
-            this.tabPagePetList.Controls.Add(this.label2);
-            this.tabPagePetList.Controls.Add(this.btnDelete);
-            this.tabPagePetList.Controls.Add(this.btnEdit);
-            this.tabPagePetList.Controls.Add(this.btnAddNew);
-            this.tabPagePetList.Controls.Add(this.btnSearch);
-            this.tabPagePetList.Controls.Add(this.txtSearch);
-            this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPagePetList.Location = new System.Drawing.Point(4, 34);
-            this.tabPagePetList.Name = "tabPagePetList";
-            this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetList.Size = new System.Drawing.Size(884, 373);
-            this.tabPagePetList.TabIndex = 0;
-            this.tabPagePetList.Text = "Event List";
-            this.tabPagePetList.UseVisualStyleBackColor = true;
+            this.tabPageEventList.Controls.Add(this.dataGridView);
+            this.tabPageEventList.Controls.Add(this.label2);
+            this.tabPageEventList.Controls.Add(this.btnDelete);
+            this.tabPageEventList.Controls.Add(this.btnEdit);
+            this.tabPageEventList.Controls.Add(this.btnAddNew);
+            this.tabPageEventList.Controls.Add(this.btnSearch);
+            this.tabPageEventList.Controls.Add(this.txtSearch);
+            this.tabPageEventList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageEventList.Location = new System.Drawing.Point(4, 34);
+            this.tabPageEventList.Name = "tabPageEventList";
+            this.tabPageEventList.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEventList.Size = new System.Drawing.Size(884, 373);
+            this.tabPageEventList.TabIndex = 0;
+            this.tabPageEventList.Text = "Event List";
+            this.tabPageEventList.UseVisualStyleBackColor = true;
             // 
             // dataGridView
             // 
@@ -145,9 +145,10 @@ namespace CRUDWinFormsMVP.Views
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 25);
+            this.label2.Size = new System.Drawing.Size(134, 25);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Search pet:";
+            this.label2.Text = "Search event:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnDelete
             // 
@@ -168,6 +169,7 @@ namespace CRUDWinFormsMVP.Views
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAddNew
             // 
@@ -198,27 +200,28 @@ namespace CRUDWinFormsMVP.Views
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(638, 30);
             this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // tabPagePetDetail
+            // tabPageEventDetail
             // 
-            this.tabPagePetDetail.Controls.Add(this.btnCancel);
-            this.tabPagePetDetail.Controls.Add(this.btnSave);
-            this.tabPagePetDetail.Controls.Add(this.label6);
-            this.tabPagePetDetail.Controls.Add(this.txtPetColour);
-            this.tabPagePetDetail.Controls.Add(this.label5);
-            this.tabPagePetDetail.Controls.Add(this.txtPetType);
-            this.tabPagePetDetail.Controls.Add(this.label4);
-            this.tabPagePetDetail.Controls.Add(this.txtPetName);
-            this.tabPagePetDetail.Controls.Add(this.label3);
-            this.tabPagePetDetail.Controls.Add(this.txtPetId);
-            this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPagePetDetail.Location = new System.Drawing.Point(4, 34);
-            this.tabPagePetDetail.Name = "tabPagePetDetail";
-            this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetDetail.Size = new System.Drawing.Size(884, 373);
-            this.tabPagePetDetail.TabIndex = 1;
-            this.tabPagePetDetail.Text = "Event Detail";
-            this.tabPagePetDetail.UseVisualStyleBackColor = true;
+            this.tabPageEventDetail.Controls.Add(this.btnCancel);
+            this.tabPageEventDetail.Controls.Add(this.btnSave);
+            this.tabPageEventDetail.Controls.Add(this.label6);
+            this.tabPageEventDetail.Controls.Add(this.txtEventDescription);
+            this.tabPageEventDetail.Controls.Add(this.label5);
+            this.tabPageEventDetail.Controls.Add(this.txtEventType);
+            this.tabPageEventDetail.Controls.Add(this.label4);
+            this.tabPageEventDetail.Controls.Add(this.txtEventName);
+            this.tabPageEventDetail.Controls.Add(this.label3);
+            this.tabPageEventDetail.Controls.Add(this.txtEventId);
+            this.tabPageEventDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageEventDetail.Location = new System.Drawing.Point(4, 34);
+            this.tabPageEventDetail.Name = "tabPageEventDetail";
+            this.tabPageEventDetail.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEventDetail.Size = new System.Drawing.Size(884, 373);
+            this.tabPageEventDetail.TabIndex = 1;
+            this.tabPageEventDetail.Text = "Event Detail";
+            this.tabPageEventDetail.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -248,12 +251,12 @@ namespace CRUDWinFormsMVP.Views
             this.label6.TabIndex = 13;
             this.label6.Text = "Event Description";
             // 
-            // txtPetColour
+            // txtEventDescription
             // 
-            this.txtPetColour.Location = new System.Drawing.Point(63, 198);
-            this.txtPetColour.Name = "txtPetColour";
-            this.txtPetColour.Size = new System.Drawing.Size(380, 34);
-            this.txtPetColour.TabIndex = 12;
+            this.txtEventDescription.Location = new System.Drawing.Point(63, 198);
+            this.txtEventDescription.Name = "txtEventDescription";
+            this.txtEventDescription.Size = new System.Drawing.Size(380, 34);
+            this.txtEventDescription.TabIndex = 12;
             // 
             // label5
             // 
@@ -265,12 +268,12 @@ namespace CRUDWinFormsMVP.Views
             this.label5.TabIndex = 11;
             this.label5.Text = "Event type";
             // 
-            // txtPetType
+            // txtEventType
             // 
-            this.txtPetType.Location = new System.Drawing.Point(260, 125);
-            this.txtPetType.Name = "txtPetType";
-            this.txtPetType.Size = new System.Drawing.Size(183, 34);
-            this.txtPetType.TabIndex = 10;
+            this.txtEventType.Location = new System.Drawing.Point(260, 125);
+            this.txtEventType.Name = "txtEventType";
+            this.txtEventType.Size = new System.Drawing.Size(183, 34);
+            this.txtEventType.TabIndex = 10;
             // 
             // label4
             // 
@@ -282,12 +285,12 @@ namespace CRUDWinFormsMVP.Views
             this.label4.TabIndex = 9;
             this.label4.Text = "Event name:";
             // 
-            // txtPetName
+            // txtEventName
             // 
-            this.txtPetName.Location = new System.Drawing.Point(63, 125);
-            this.txtPetName.Name = "txtPetName";
-            this.txtPetName.Size = new System.Drawing.Size(154, 34);
-            this.txtPetName.TabIndex = 8;
+            this.txtEventName.Location = new System.Drawing.Point(63, 125);
+            this.txtEventName.Name = "txtEventName";
+            this.txtEventName.Size = new System.Drawing.Size(154, 34);
+            this.txtEventName.TabIndex = 8;
             // 
             // label3
             // 
@@ -299,16 +302,16 @@ namespace CRUDWinFormsMVP.Views
             this.label3.TabIndex = 7;
             this.label3.Text = "Event ID:";
             // 
-            // txtPetId
+            // txtEventId
             // 
-            this.txtPetId.Location = new System.Drawing.Point(63, 54);
-            this.txtPetId.Name = "txtPetId";
-            this.txtPetId.ReadOnly = true;
-            this.txtPetId.Size = new System.Drawing.Size(154, 34);
-            this.txtPetId.TabIndex = 6;
-            this.txtPetId.Text = "0";
+            this.txtEventId.Location = new System.Drawing.Point(63, 54);
+            this.txtEventId.Name = "txtEventId";
+            this.txtEventId.ReadOnly = true;
+            this.txtEventId.Size = new System.Drawing.Size(154, 34);
+            this.txtEventId.TabIndex = 6;
+            this.txtEventId.Text = "0";
             // 
-            // PetView
+            // EventView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -317,16 +320,17 @@ namespace CRUDWinFormsMVP.Views
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "PetView";
-            this.Text = "PetView";
+            this.Name = "EventView";
+            this.Text = "EventView";
+            this.Load += new System.EventHandler(this.EventView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPagePetList.ResumeLayout(false);
-            this.tabPagePetList.PerformLayout();
+            this.tabPageEventList.ResumeLayout(false);
+            this.tabPageEventList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.tabPagePetDetail.ResumeLayout(false);
-            this.tabPagePetDetail.PerformLayout();
+            this.tabPageEventDetail.ResumeLayout(false);
+            this.tabPageEventDetail.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -344,25 +348,25 @@ namespace CRUDWinFormsMVP.Views
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPagePetList;
+        private System.Windows.Forms.TabPage tabPageEventList;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.TabPage tabPagePetDetail;
+        private System.Windows.Forms.TabPage tabPageEventDetail;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPetColour;
+        private System.Windows.Forms.TextBox txtEventDescription;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPetType;
+        private System.Windows.Forms.TextBox txtEventType;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPetName;
+        private System.Windows.Forms.TextBox txtEventName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPetId;
+        private System.Windows.Forms.TextBox txtEventId;
         private System.Windows.Forms.Button btnClose;
     }
 }

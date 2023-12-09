@@ -31,3 +31,14 @@ C:\Users\moham\Desktop\UnityGives_C#_MiniProjet\CRUDWinFormsMVP\obj\Debug\CRUDWi
 C:\Users\moham\Desktop\UnityGives_C#_MiniProjet\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.csproj.CoreCompileInputs.cache
 C:\Users\moham\Desktop\UnityGives_C#_MiniProjet\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.exe
 C:\Users\moham\Desktop\UnityGives_C#_MiniProjet\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.pdb
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.csproj.AssemblyReference.cache
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.Properties.Resources.resources
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.Views.MainView.resources
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.csproj.GenerateResource.cache
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.csproj.CoreCompileInputs.cache
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.exe
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.pdb
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.Views.EventView.resources
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\bin\Debug\CRUDWinFormsMVP.exe.config
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\bin\Debug\CRUDWinFormsMVP.exe
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\bin\Debug\CRUDWinFormsMVP.pdb

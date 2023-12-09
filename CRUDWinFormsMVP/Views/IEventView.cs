@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace CRUDWinFormsMVP.Views
 {
-    public interface IPetView
+    public interface IEventView
     {
         //Properties - Fields
         string PetId { get; set; }

@@ -19,12 +19,12 @@ namespace CRUDWinFormsMVP.Presenters
         {
             this.mainView = mainView;
             this.sqlConnectionString = sqlConnectionString;
-            this.mainView.ShowPetView += ShowPetsView;
+            this.mainView.ShowEventView += ShowEventsView;
         }
 
-        private void ShowPetsView(object sender, EventArgs e)
+        private void ShowEventsView(object sender, EventArgs e)
         {
-            IPetView view = PetView.GetInstace((MainView)mainView);
+            IEventView view = EventView.GetInstace((MainView)mainView);
             IPetRepository repository = new PetRepository(sqlConnectionString);
             new PetPresenter(view, repository);
         }

@@ -30,13 +30,13 @@ namespace CRUDWinFormsMVP.Views
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPets = new System.Windows.Forms.Button();
+            this.btnEvents = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnPets);
+            this.panel1.Controls.Add(this.btnEvents);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -44,17 +44,17 @@ namespace CRUDWinFormsMVP.Views
             this.panel1.Size = new System.Drawing.Size(267, 695);
             this.panel1.TabIndex = 0;
             // 
-            // btnPets
+            // btnEvents
             // 
-            this.btnPets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPets.Location = new System.Drawing.Point(4, 66);
-            this.btnPets.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPets.Name = "btnPets";
-            this.btnPets.Size = new System.Drawing.Size(263, 46);
-            this.btnPets.TabIndex = 0;
-            this.btnPets.Text = "Events";
-            this.btnPets.UseVisualStyleBackColor = true;
-            this.btnPets.Click += new System.EventHandler(this.btnPets_Click);
+            this.btnEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvents.Location = new System.Drawing.Point(4, 66);
+            this.btnEvents.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEvents.Name = "btnEvents";
+            this.btnEvents.Size = new System.Drawing.Size(263, 46);
+            this.btnEvents.TabIndex = 0;
+            this.btnEvents.Text = "Events";
+            this.btnEvents.UseVisualStyleBackColor = true;
+            this.btnEvents.Click += new System.EventHandler(this.btnPets_Click);
             // 
             // MainView
             // 
@@ -76,6 +76,6 @@ namespace CRUDWinFormsMVP.Views
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnPets;
+        private System.Windows.Forms.Button btnEvents;
     }
 }
