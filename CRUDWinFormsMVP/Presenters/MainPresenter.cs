@@ -25,8 +25,8 @@ namespace CRUDWinFormsMVP.Presenters
         private void ShowEventsView(object sender, EventArgs e)
         {
             IEventView view = EventView.GetInstace((MainView)mainView);
-            IPetRepository repository = new PetRepository(sqlConnectionString);
-            new PetPresenter(view, repository);
+            IEventRepository repository = new EventRepository(sqlConnectionString);
+            new EventPresenter(view, repository);
         }
     }
 }

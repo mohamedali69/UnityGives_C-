@@ -41,7 +41,7 @@ namespace CRUDWinFormsMVP.Views
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabPageEventList);
                 tabControl1.TabPages.Add(tabPageEventDetail);
-                tabPageEventDetail.Text = "Add new pet";
+                tabPageEventDetail.Text = "Add new Event";
             };
             //Edit
             btnEdit.Click += delegate
@@ -49,7 +49,7 @@ namespace CRUDWinFormsMVP.Views
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabPageEventList);
                 tabControl1.TabPages.Add(tabPageEventDetail);
-                tabPageEventDetail.Text = "Edit pet";
+                tabPageEventDetail.Text = "Edit event";
             };
             //Save changes
             btnSave.Click += delegate
@@ -72,7 +72,7 @@ namespace CRUDWinFormsMVP.Views
             //Delete
             btnDelete.Click += delegate
             {               
-                var result = MessageBox.Show("Are you sure you want to delete the selected pet?", "Warning",
+                var result = MessageBox.Show("Are you sure you want to delete the selected event?", "Warning",
                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -83,25 +83,25 @@ namespace CRUDWinFormsMVP.Views
         }
 
         //Properties
-        public string PetId
+        public string EventId
         {
             get { return txtEventId.Text; }
             set { txtEventId.Text = value; }
         }
 
-        public string PetName
+        public string EventName
         {
             get { return txtEventName.Text; }
             set { txtEventName.Text = value; }
         }
 
-        public string PetType
+        public string EventType
         {
             get { return txtEventType.Text; }
             set { txtEventType.Text = value; }
         }
 
-        public string PetColour
+        public string EventDescription
         {
             get { return txtEventDescription.Text; }
             set { txtEventDescription.Text = value; }
@@ -140,9 +140,9 @@ namespace CRUDWinFormsMVP.Views
         public event EventHandler CancelEvent;
 
         //Methods
-        public void SetPetListBindingSource(BindingSource petList)
+        public void SetEventListBindingSource(BindingSource eventList)
         {
-            dataGridView.DataSource = petList;
+            dataGridView.DataSource = eventList;
         }
 
         //Singleton pattern (Open a single form instance)
@@ -181,6 +181,21 @@ namespace CRUDWinFormsMVP.Views
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEventId_TextChanged(object sender, EventArgs e)
         {
 
         }

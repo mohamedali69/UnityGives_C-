@@ -10,10 +10,10 @@ namespace CRUDWinFormsMVP.Views
     public interface IEventView
     {
         //Properties - Fields
-        string PetId { get; set; }
-        string PetName { get; set; }
-        string PetType { get; set; }
-        string PetColour { get; set; }
+        string EventId { get; set; }
+        string EventName { get; set; }
+        string EventType { get; set; }
+        string EventDescription { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -29,7 +29,7 @@ namespace CRUDWinFormsMVP.Views
         event EventHandler CancelEvent;
 
         //Methods
-        void SetPetListBindingSource(BindingSource petList);
+        void SetEventListBindingSource(BindingSource eventList);
         void Show();//Optional
 
     }

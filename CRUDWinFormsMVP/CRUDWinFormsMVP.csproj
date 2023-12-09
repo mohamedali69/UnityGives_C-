@@ -52,7 +52,7 @@
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
-    <Compile Include="Presenters\PetPresenter.cs" />
+    <Compile Include="Presenters\EventPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\IMainView.cs" />
@@ -70,7 +70,7 @@
       <DependentUpon>EventView.cs</DependentUpon>
     </Compile>
     <Compile Include="_Repositories\BaseRepository.cs" />
-    <Compile Include="_Repositories\PetRepository.cs" />
+    <Compile Include="_Repositories\EventRepository.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

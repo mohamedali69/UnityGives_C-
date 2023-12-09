@@ -9,25 +9,25 @@ using CRUDWinFormsMVP.Models;
 
 namespace CRUDWinFormsMVP._Repositories
 {
-    public class PetRepository : BaseRepository, IPetRepository
+    public class EventRepository : BaseRepository, IEventRepository
     {
         //Constructor
-        public PetRepository(string connectionString)
+        public EventRepository(string connectionString)
         {
             this.connectionString = connectionString;
         }
         //Methods
-        public void Add(EventModel petModel)
+        public void Add(EventModel eventModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into Pet values (@name, @type, @colour)";
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = petModel.Name;
-                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = petModel.Type;
-                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = petModel.Description;
+                command.CommandText = "insert into Event values (@name, @type, @colour)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventModel.Name;
+                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = eventModel.Type;
+                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = eventModel.Description;
                 command.ExecuteNonQuery();
             }
         }
@@ -38,7 +38,7 @@ namespace CRUDWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "delete from Pet where Pet_Id=@id";
+                command.CommandText = "delete from Event where Event_Id=@id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;           
                 command.ExecuteNonQuery();
             }
@@ -50,9 +50,9 @@ namespace CRUDWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"update Pet 
-                                        set Pet_Name=@name,Pet_Type= @type,Pet_Colour= @colour 
-                                        where Pet_Id=@id";
+                command.CommandText = @"update Event 
+                                        set Event_Name=@name,Event_Type= @type,Event_Colour= @colour 
+                                        where Event_Id=@id";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventModel.Name;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = eventModel.Type;
                 command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = eventModel.Description;
@@ -63,59 +63,59 @@ namespace CRUDWinFormsMVP._Repositories
 
         public IEnumerable<EventModel> GetAll()
         {
-            var petList = new List<EventModel>();
+            var eventList = new List<EventModel>();
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select *from Pet order by Pet_Id desc";
+                command.CommandText = "Select * from Event order by Event_Id desc";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var petModel = new EventModel();
-                        petModel.Id = (int)reader[0];
-                        petModel.Name = reader[1].ToString();
-                        petModel.Type = reader[2].ToString();
-                        petModel.Description = reader[3].ToString();
-                        petList.Add(petModel);
+                        var eventModel = new EventModel();
+                        eventModel.Id = (int)reader[0];
+                        eventModel.Name = reader[1].ToString();
+                        eventModel.Type = reader[2].ToString();
+                        eventModel.Description = reader[3].ToString();
+                        eventList.Add(eventModel);
                     }
                 }
             }
-            return petList;
+            return eventList;
         }
 
         public IEnumerable<EventModel> GetByValue(string value)
         {
-            var petList = new List<EventModel>();
-            int petId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
-            string petName = value;
+            var eventList = new List<EventModel>();
+            int eventId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
+            string eventName = value;
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select *from Pet
-                                        where Pet_Id=@id or Pet_Name like @name+'%' 
-                                        order by Pet_Id desc";
-                command.Parameters.Add("@id", SqlDbType.Int).Value = petId;
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = petName;
+                command.CommandText = @"Select *from Event
+                                        where Event_Id=@id or Event_Name like @name+'%' 
+                                        order by Event_Id desc";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = eventId;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventName;
 
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var petModel = new EventModel();
-                        petModel.Id = (int)reader[0];
-                        petModel.Name = reader[1].ToString();
-                        petModel.Type = reader[2].ToString();
-                        petModel.Description = reader[3].ToString();
-                        petList.Add(petModel);
+                        var eventModel = new EventModel();
+                        eventModel.Id = (int)reader[0];
+                        eventModel.Name = reader[1].ToString();
+                        eventModel.Type = reader[2].ToString();
+                        eventModel.Description = reader[3].ToString();
+                        eventList.Add(eventModel);
                     }
                 }
             }
-            return petList;
+            return eventList;
         }
     }
 }

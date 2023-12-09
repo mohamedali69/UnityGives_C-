@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRUDWinFormsMVP.Models
 {
-   public interface IPetRepository
+   public interface IEventRepository
     {
         void Add(EventModel eventModel);
         void Edit(EventModel eventModel);

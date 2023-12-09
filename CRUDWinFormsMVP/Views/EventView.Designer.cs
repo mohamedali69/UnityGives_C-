@@ -159,6 +159,7 @@ namespace CRUDWinFormsMVP.Views
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -191,6 +192,7 @@ namespace CRUDWinFormsMVP.Views
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -310,6 +312,7 @@ namespace CRUDWinFormsMVP.Views
             this.txtEventId.Size = new System.Drawing.Size(154, 34);
             this.txtEventId.TabIndex = 6;
             this.txtEventId.Text = "0";
+            this.txtEventId.TextChanged += new System.EventHandler(this.txtEventId_TextChanged);
             // 
             // EventView
             // 
