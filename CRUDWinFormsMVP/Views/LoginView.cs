@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CRUDWinFormsMVP.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -45,9 +47,14 @@ namespace CRUDWinFormsMVP.Views
             loginButton.Click += delegate { Login?.Invoke(this, EventArgs.Empty); 
             if(isSuccessful == true)
             {
-                MessageBox.Show(message);
-                this.Hide();
-            }
+                    MessageBox.Show(message);
+                    this.Hide();
+                    string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
+                    IMainView view = new MainView();
+                    new MainPresenter(view, sqlConnectionString);
+                    ((Form)view).ShowDialog();
+                    this.Close();
+                }
             else
             {
                 MessageBox.Show(message);

@@ -25,8 +25,6 @@ namespace CRUDWinFormsMVP
             ILoginView loginView = new LoginView();
             IUserRepository userRepository = new UserRepository(sqlConnectionString);
             new LoginPresenter(loginView,userRepository);
-            //IMainView view = new MainView();           
-            //new MainPresenter(view,sqlConnectionString);
             Application.Run((Form)loginView );
         }
     }
