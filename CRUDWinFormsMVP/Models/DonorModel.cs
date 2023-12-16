@@ -8,44 +8,44 @@ using System.ComponentModel;
 
 namespace CRUDWinFormsMVP.Models
 {
-    public class EventModel
+    public class DonorModel
     {
         //Fields
         private int id;
         private string name;
-        private string type;
-        private string description;
+        private string email;
+        private string phoneNumber;
 
         //Properties - Validations
-        [DisplayName("Event ID")]
+        [DisplayName("Donor ID")]
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
 
-        [DisplayName("Event Name")]
-        [Required(ErrorMessage = "Event name is requerid")]
+        [DisplayName("Donor Name")]
+        [Required(ErrorMessage = "Donor name is requerid")]
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
 
-        [DisplayName("Event Type")]
-        [Required(ErrorMessage = "Event type is requerid")]
-        public string Type
+        [DisplayName("Donor Email")]
+        [Required(ErrorMessage = "Donor email is requerid")]
+        public string Email
         {
-            get { return type; }
-            set { type = value; }
+            get { return email; }
+            set { email = value; }
         }
 
-        [DisplayName("Event Description")]
-        [Required(ErrorMessage = "Event description is requerid")]
-        public string Description
+        [DisplayName("Donor phone number")]
+        [Required(ErrorMessage = "Donor phone number is requerid")]
+        public string PhoneNumber
         {
-            get { return description; }
-            set { description = value; }
+            get { return phoneNumber; }
+            set { phoneNumber = value; }
         }
     }
 }

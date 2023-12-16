@@ -48,10 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DonorModel.cs" />
+    <Compile Include="Models\IDonorRepository.cs" />
     <Compile Include="Models\IUserRepository.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\IEventRepository.cs" />
     <Compile Include="Models\EventModel.cs" />
+    <Compile Include="Presenters\DonorPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
@@ -87,6 +90,7 @@
       <DependentUpon>EventView.cs</DependentUpon>
     </Compile>
     <Compile Include="_Repositories\BaseRepository.cs" />
+    <Compile Include="_Repositories\DonorRepository.cs" />
     <Compile Include="_Repositories\UserRepository.cs" />
     <Compile Include="_Repositories\EventRepository.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

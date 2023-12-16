@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CRUDWinFormsMVP.Models
 {
-   public interface IEventRepository
+   public interface IDonorRepository
     {
-        void Add(EventModel eventModel);
-        void Edit(EventModel eventModel);
+        void Add(DonorModel eventModel);
+        void Edit(DonorModel eventModel);
         void Delete(int id);
-        IEnumerable<EventModel> GetAll();
-        IEnumerable<EventModel> GetByValue(string value);//Searchs
+        IEnumerable<DonorModel> GetAll();
+        IEnumerable<DonorModel> GetByValue(string value);//Searchs
 
     }
 }

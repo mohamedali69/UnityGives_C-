@@ -9,25 +9,25 @@ using CRUDWinFormsMVP.Models;
 
 namespace CRUDWinFormsMVP._Repositories
 {
-    public class EventRepository : BaseRepository, IEventRepository
+    public class DonorRepository : BaseRepository, IDonorRepository
     {
         //Constructor
-        public EventRepository(string connectionString)
+        public DonorRepository(string connectionString)
         {
             this.connectionString = connectionString;
         }
         //Methods
-        public void Add(EventModel eventModel)
+        public void Add(DonorModel donorModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into Event values (@name, @type, @description)";
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventModel.Name;
-                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = eventModel.Type;
-                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = eventModel.Description;
+                command.CommandText = "insert into Donor values (@name, @email, @phoneNumber)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = donorModel.Name;
+                command.Parameters.Add("@email", SqlDbType.NVarChar).Value = donorModel.Email;
+                command.Parameters.Add("@phoneNumber", SqlDbType.NVarChar).Value = donorModel.PhoneNumber;
                 command.ExecuteNonQuery();
             }
         }
@@ -38,84 +38,84 @@ namespace CRUDWinFormsMVP._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "delete from Event where Event_Id=@id";
+                command.CommandText = "delete from Donor where Donor_Id=@id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;           
                 command.ExecuteNonQuery();
             }
         }
-        public void Edit(EventModel eventModel)
+        public void Edit(DonorModel donorModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"update Event 
-                                        set Event_Name=@name,Event_Type= @type,Event_Description= @description 
-                                        where Event_Id=@id";
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventModel.Name;
-                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = eventModel.Type;
-                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = eventModel.Description;
-                command.Parameters.Add("@id", SqlDbType.Int).Value = eventModel.Id;
+                command.CommandText = @"update Donor 
+                                        set Donor_Name=@name,Donor_Email= @email,Donor_PhoneNumber= @phoneNumber 
+                                        where Donor_Id=@id";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = donorModel.Name;
+                command.Parameters.Add("@email", SqlDbType.NVarChar).Value = donorModel.Email;
+                command.Parameters.Add("@phoneNumber", SqlDbType.NVarChar).Value = donorModel.PhoneNumber;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = donorModel.Id;
                 command.ExecuteNonQuery();
             }
         }
 
-        public IEnumerable<EventModel> GetAll()
+        public IEnumerable<DonorModel> GetAll()
         {
-            var eventList = new List<EventModel>();
+            var donorList = new List<DonorModel>();
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from Event order by Event_Id desc";
+                command.CommandText = "Select * from Donor order by Donor_Id desc";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var eventModel = new EventModel();
-                        eventModel.Id = (int)reader[0];
-                        eventModel.Name = reader[1].ToString();
-                        eventModel.Type = reader[2].ToString();
-                        eventModel.Description = reader[3].ToString();
-                        eventList.Add(eventModel);
+                        var donorModel = new DonorModel();
+                        donorModel.Id = (int)reader[0];
+                        donorModel.Name = reader[1].ToString();
+                        donorModel.Email = reader[2].ToString();
+                        donorModel.PhoneNumber = reader[3].ToString();
+                        donorList.Add(donorModel);
                     }
                 }
             }
-            return eventList;
+            return donorList;
         }
 
-        public IEnumerable<EventModel> GetByValue(string value)
+        public IEnumerable<DonorModel> GetByValue(string value)
         {
-            var eventList = new List<EventModel>();
-            int eventId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
-            string eventName = value;
+            var donorList = new List<DonorModel>();
+            int donorId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
+            string donorName = value;
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select *from Event
-                                        where Event_Id=@id or Event_Name like @name+'%' 
-                                        order by Event_Id desc";
-                command.Parameters.Add("@id", SqlDbType.Int).Value = eventId;
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = eventName;
+                command.CommandText = @"Select *from Donor
+                                        where Donor_Id=@id or Donor_Name like @name+'%' 
+                                        order by Donor_Id desc";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = donorId;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = donorName;
 
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var eventModel = new EventModel();
-                        eventModel.Id = (int)reader[0];
-                        eventModel.Name = reader[1].ToString();
-                        eventModel.Type = reader[2].ToString();
-                        eventModel.Description = reader[3].ToString();
-                        eventList.Add(eventModel);
+                        var donorModel = new DonorModel();
+                        donorModel.Id = (int)reader[0];
+                        donorModel.Name = reader[1].ToString();
+                        donorModel.Email = reader[2].ToString();
+                        donorModel.PhoneNumber = reader[3].ToString();
+                        donorList.Add(donorModel);
                     }
                 }
             }
-            return eventList;
+            return donorList;
         }
     }
 }

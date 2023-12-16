@@ -29,32 +29,32 @@ namespace CRUDWinFormsMVP.Views
         private void AssociateAndRaiseViewEvents()
         {
             //Search
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btnSearch.Click += delegate { SearchDonor?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
-                      SearchEvent?.Invoke(this, EventArgs.Empty);
+                      SearchDonor?.Invoke(this, EventArgs.Empty);
               };
             //Add new
             btnAddNew.Click += delegate
             {
-                AddNewEvent?.Invoke(this, EventArgs.Empty);
+                AddNewDonor?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabPageDonorList);
                 tabControl1.TabPages.Add(tabPageDonorDetail);
-                tabPageDonorDetail.Text = "Add new Event";
+                tabPageDonorDetail.Text = "Add new Donor";
             };
             //Edit
             btnEdit.Click += delegate
             {
-                EditEvent?.Invoke(this, EventArgs.Empty);
+                EditDonor?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabPageDonorList);
                 tabControl1.TabPages.Add(tabPageDonorDetail);
-                tabPageDonorDetail.Text = "Edit event";
+                tabPageDonorDetail.Text = "Edit Donor";
             };
             //Save changes
             btnSave.Click += delegate
             {
-                SaveEvent?.Invoke(this, EventArgs.Empty);
+                SaveDonor?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
                     tabControl1.TabPages.Remove(tabPageDonorDetail);
@@ -65,43 +65,43 @@ namespace CRUDWinFormsMVP.Views
             //Cancel
             btnCancel.Click += delegate
             {
-                CancelEvent?.Invoke(this, EventArgs.Empty);
+                CancelDonor?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabPageDonorDetail);
                 tabControl1.TabPages.Add(tabPageDonorList);
             };
             //Delete
             btnDelete.Click += delegate
             {               
-                var result = MessageBox.Show("Are you sure you want to delete the selected event?", "Warning",
+                var result = MessageBox.Show("Are you sure you want to delete the selected Donor?", "Warning",
                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    DeleteDonor?.Invoke(this, EventArgs.Empty);
                     MessageBox.Show(Message);
                 }
             };
         }
 
         //Properties
-        public string EventId
+        public string DonorId
         {
             get { return txtDonorId.Text; }
             set { txtDonorId.Text = value; }
         }
 
-        public string EventName
+        public string DonorName
         {
             get { return txtDonorName.Text; }
             set { txtDonorName.Text = value; }
         }
 
-        public string EventType
+        public string DonorEmail
         {
             get { return txtDonorEmail.Text; }
             set { txtDonorEmail.Text = value; }
         }
 
-        public string EventDescription
+        public string DonorPhoneNumber
         {
             get { return txtDonorPhoneNumber.Text; }
             set { txtDonorPhoneNumber.Text = value; }
@@ -132,26 +132,27 @@ namespace CRUDWinFormsMVP.Views
         }
 
         //Events
-        public event EventHandler SearchEvent;
-        public event EventHandler AddNewEvent;
-        public event EventHandler EditEvent;
-        public event EventHandler DeleteEvent;
-        public event EventHandler SaveEvent;
-        public event EventHandler CancelEvent;
+        public event EventHandler SearchDonor;
+        public event EventHandler AddNewDonor;
+        public event EventHandler EditDonor;
+        public event EventHandler DeleteDonor;
+        public event EventHandler SaveDonor;
+        public event EventHandler CancelDonor;
 
         //Methods
-        public void SetEventListBindingSource(BindingSource eventList)
+        public void SetDonorListBindingSource(BindingSource donorList)
         {
-            dataGridView.DataSource = eventList;
+            dataGridView.DataSource = donorList;
         }
 
         //Singleton pattern (Open a single form instance)
-        private static EventView instance;
-        public static EventView GetInstace(Form parentContainer)
+        private static DonorView instance;
+
+        public static DonorView GetInstace(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new EventView();
+                instance = new DonorView();
                 instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;

@@ -20,6 +20,7 @@ namespace CRUDWinFormsMVP.Presenters
             this.mainView = mainView;
             this.sqlConnectionString = sqlConnectionString;
             this.mainView.ShowEventView += ShowEventsView;
+            this.mainView.ShowDonorView += ShowDonorsView;
         }
 
         private void ShowEventsView(object sender, EventArgs e)
@@ -27,6 +28,13 @@ namespace CRUDWinFormsMVP.Presenters
             IEventView view = EventView.GetInstace((MainView)mainView);
             IEventRepository repository = new EventRepository(sqlConnectionString);
             new EventPresenter(view, repository);
+        }
+        
+        private void ShowDonorsView(object sender, EventArgs e)
+        {
+            IDonorView view = DonorView.GetInstace((MainView)mainView);
+            IDonorRepository repository = new DonorRepository(sqlConnectionString);
+            new DonorPresenter(view, repository);
         }
     }
 }

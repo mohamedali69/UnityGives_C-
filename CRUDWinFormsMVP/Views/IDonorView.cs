@@ -10,10 +10,10 @@ namespace CRUDWinFormsMVP.Views
     public interface IDonorView
     {
         //Properties - Fields
-        string EventId { get; set; }
-        string EventName { get; set; }
-        string EventType { get; set; }
-        string EventDescription { get; set; }
+        string DonorId { get; set; }
+        string DonorName { get; set; }
+        string DonorEmail { get; set; }
+        string DonorPhoneNumber { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -21,15 +21,15 @@ namespace CRUDWinFormsMVP.Views
         string Message { get; set; }
 
         //Events
-        event EventHandler SearchEvent;
-        event EventHandler AddNewEvent;
-        event EventHandler EditEvent;
-        event EventHandler DeleteEvent;
-        event EventHandler SaveEvent;
-        event EventHandler CancelEvent;
+        event EventHandler SearchDonor;
+        event EventHandler AddNewDonor;
+        event EventHandler EditDonor;
+        event EventHandler DeleteDonor;
+        event EventHandler SaveDonor;
+        event EventHandler CancelDonor;
 
         //Methods
-        void SetEventListBindingSource(BindingSource eventList);
+        void SetDonorListBindingSource(BindingSource donorList);
         void Show();//Optional
 
     }
