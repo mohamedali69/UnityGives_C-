@@ -9,8 +9,7 @@ namespace CRUDWinFormsMVP.Views
     public interface IMainView
     {
         event EventHandler ShowEventView;
-        event EventHandler ShowOwnerView;
-        event EventHandler ShowVetsView;
+        event EventHandler ShowDonorView;
 
     }
 }

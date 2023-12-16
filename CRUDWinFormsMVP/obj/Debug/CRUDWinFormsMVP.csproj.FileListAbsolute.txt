@@ -43,3 +43,4 @@ C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\bin\Debug\CRUDWinFormsMVP.e
 C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\bin\Debug\CRUDWinFormsMVP.exe
 C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\bin\Debug\CRUDWinFormsMVP.pdb
 C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.Views.LoginView.resources
+C:\Users\moham\Desktop\UnityGives_C-\CRUDWinFormsMVP\obj\Debug\CRUDWinFormsMVP.Views.DonorView.resources

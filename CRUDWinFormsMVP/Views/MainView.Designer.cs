@@ -31,11 +31,13 @@ namespace CRUDWinFormsMVP.Views
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEvents = new System.Windows.Forms.Button();
+            this.bntTeam = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bntTeam);
             this.panel1.Controls.Add(this.btnEvents);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -56,6 +58,18 @@ namespace CRUDWinFormsMVP.Views
             this.btnEvents.Text = "Events";
             this.btnEvents.UseVisualStyleBackColor = true;
             this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
+            // 
+            // bntTeam
+            // 
+            this.bntTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntTeam.Location = new System.Drawing.Point(4, 120);
+            this.bntTeam.Margin = new System.Windows.Forms.Padding(4);
+            this.bntTeam.Name = "bntTeam";
+            this.bntTeam.Size = new System.Drawing.Size(263, 46);
+            this.bntTeam.TabIndex = 1;
+            this.bntTeam.Text = "Team";
+            this.bntTeam.UseVisualStyleBackColor = true;
+            this.bntTeam.Click += new System.EventHandler(this.bntTeam_Click);
             // 
             // MainView
             // 
@@ -78,5 +92,6 @@ namespace CRUDWinFormsMVP.Views
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEvents;
+        private System.Windows.Forms.Button bntTeam;
     }
 }

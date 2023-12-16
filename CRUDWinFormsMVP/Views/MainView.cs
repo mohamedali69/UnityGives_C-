@@ -16,11 +16,12 @@ namespace CRUDWinFormsMVP.Views
         {
             InitializeComponent();
             btnEvents.Click += delegate { ShowEventView?.Invoke(this, EventArgs.Empty); };
+            bntTeam.Click += delegate { ShowDonorView?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler ShowEventView;
-        public event EventHandler ShowOwnerView;
-        public event EventHandler ShowVetsView;
+        public event EventHandler ShowDonorView;
+
 
         private void btnEvents_Click(object sender, EventArgs e)
         {
@@ -33,6 +34,16 @@ namespace CRUDWinFormsMVP.Views
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntTeam_Click(object sender, EventArgs e)
         {
 
         }
