@@ -204,5 +204,15 @@ namespace CRUDWinFormsMVP.Views
         {
 
         }
+
+        private void tabPageEventDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

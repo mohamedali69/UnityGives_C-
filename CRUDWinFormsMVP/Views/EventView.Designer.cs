@@ -225,6 +225,7 @@ namespace CRUDWinFormsMVP.Views
             this.tabPageEventDetail.TabIndex = 1;
             this.tabPageEventDetail.Text = "Event Detail";
             this.tabPageEventDetail.UseVisualStyleBackColor = true;
+            this.tabPageEventDetail.Click += new System.EventHandler(this.tabPageEventDetail_Click);
             // 
             // btnCancel
             // 
@@ -243,6 +244,7 @@ namespace CRUDWinFormsMVP.Views
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label6
             // 
