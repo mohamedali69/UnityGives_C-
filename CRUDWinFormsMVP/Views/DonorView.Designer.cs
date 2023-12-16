@@ -35,7 +35,7 @@ namespace CRUDWinFormsMVP.Views
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageEventList = new System.Windows.Forms.TabPage();
+            this.tabPageDonorList = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -43,22 +43,22 @@ namespace CRUDWinFormsMVP.Views
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.tabPageEventDetail = new System.Windows.Forms.TabPage();
+            this.tabPageDonorDetail = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtEventDescription = new System.Windows.Forms.TextBox();
+            this.txtDonorPhoneNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEventType = new System.Windows.Forms.TextBox();
+            this.txtDonorEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEventName = new System.Windows.Forms.TextBox();
+            this.txtDonorName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtEventId = new System.Windows.Forms.TextBox();
+            this.txtDonorId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPageEventList.SuspendLayout();
+            this.tabPageDonorList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.tabPageEventDetail.SuspendLayout();
+            this.tabPageDonorDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +83,7 @@ namespace CRUDWinFormsMVP.Views
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(892, 56);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnClose
             // 
@@ -96,8 +97,8 @@ namespace CRUDWinFormsMVP.Views
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPageEventList);
-            this.tabControl1.Controls.Add(this.tabPageEventDetail);
+            this.tabControl1.Controls.Add(this.tabPageDonorList);
+            this.tabControl1.Controls.Add(this.tabPageDonorDetail);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
@@ -105,23 +106,24 @@ namespace CRUDWinFormsMVP.Views
             this.tabControl1.Size = new System.Drawing.Size(892, 411);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPageEventList
+            // tabPageDonorList
             // 
-            this.tabPageEventList.Controls.Add(this.dataGridView);
-            this.tabPageEventList.Controls.Add(this.label2);
-            this.tabPageEventList.Controls.Add(this.btnDelete);
-            this.tabPageEventList.Controls.Add(this.btnEdit);
-            this.tabPageEventList.Controls.Add(this.btnAddNew);
-            this.tabPageEventList.Controls.Add(this.btnSearch);
-            this.tabPageEventList.Controls.Add(this.txtSearch);
-            this.tabPageEventList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageEventList.Location = new System.Drawing.Point(4, 34);
-            this.tabPageEventList.Name = "tabPageEventList";
-            this.tabPageEventList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEventList.Size = new System.Drawing.Size(884, 373);
-            this.tabPageEventList.TabIndex = 0;
-            this.tabPageEventList.Text = "Donor List";
-            this.tabPageEventList.UseVisualStyleBackColor = true;
+            this.tabPageDonorList.Controls.Add(this.dataGridView);
+            this.tabPageDonorList.Controls.Add(this.label2);
+            this.tabPageDonorList.Controls.Add(this.btnDelete);
+            this.tabPageDonorList.Controls.Add(this.btnEdit);
+            this.tabPageDonorList.Controls.Add(this.btnAddNew);
+            this.tabPageDonorList.Controls.Add(this.btnSearch);
+            this.tabPageDonorList.Controls.Add(this.txtSearch);
+            this.tabPageDonorList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageDonorList.Location = new System.Drawing.Point(4, 34);
+            this.tabPageDonorList.Name = "tabPageDonorList";
+            this.tabPageDonorList.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDonorList.Size = new System.Drawing.Size(884, 373);
+            this.tabPageDonorList.TabIndex = 0;
+            this.tabPageDonorList.Text = "Donor List";
+            this.tabPageDonorList.UseVisualStyleBackColor = true;
+            this.tabPageDonorList.Click += new System.EventHandler(this.tabPageDonorList_Click);
             // 
             // dataGridView
             // 
@@ -205,27 +207,27 @@ namespace CRUDWinFormsMVP.Views
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // tabPageEventDetail
+            // tabPageDonorDetail
             // 
-            this.tabPageEventDetail.Controls.Add(this.btnCancel);
-            this.tabPageEventDetail.Controls.Add(this.btnSave);
-            this.tabPageEventDetail.Controls.Add(this.label6);
-            this.tabPageEventDetail.Controls.Add(this.txtEventDescription);
-            this.tabPageEventDetail.Controls.Add(this.label5);
-            this.tabPageEventDetail.Controls.Add(this.txtEventType);
-            this.tabPageEventDetail.Controls.Add(this.label4);
-            this.tabPageEventDetail.Controls.Add(this.txtEventName);
-            this.tabPageEventDetail.Controls.Add(this.label3);
-            this.tabPageEventDetail.Controls.Add(this.txtEventId);
-            this.tabPageEventDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageEventDetail.Location = new System.Drawing.Point(4, 34);
-            this.tabPageEventDetail.Name = "tabPageEventDetail";
-            this.tabPageEventDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEventDetail.Size = new System.Drawing.Size(884, 373);
-            this.tabPageEventDetail.TabIndex = 1;
-            this.tabPageEventDetail.Text = "Donor Detail";
-            this.tabPageEventDetail.UseVisualStyleBackColor = true;
-            this.tabPageEventDetail.Click += new System.EventHandler(this.tabPageEventDetail_Click);
+            this.tabPageDonorDetail.Controls.Add(this.btnCancel);
+            this.tabPageDonorDetail.Controls.Add(this.btnSave);
+            this.tabPageDonorDetail.Controls.Add(this.label6);
+            this.tabPageDonorDetail.Controls.Add(this.txtDonorPhoneNumber);
+            this.tabPageDonorDetail.Controls.Add(this.label5);
+            this.tabPageDonorDetail.Controls.Add(this.txtDonorEmail);
+            this.tabPageDonorDetail.Controls.Add(this.label4);
+            this.tabPageDonorDetail.Controls.Add(this.txtDonorName);
+            this.tabPageDonorDetail.Controls.Add(this.label3);
+            this.tabPageDonorDetail.Controls.Add(this.txtDonorId);
+            this.tabPageDonorDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageDonorDetail.Location = new System.Drawing.Point(4, 34);
+            this.tabPageDonorDetail.Name = "tabPageDonorDetail";
+            this.tabPageDonorDetail.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDonorDetail.Size = new System.Drawing.Size(884, 373);
+            this.tabPageDonorDetail.TabIndex = 1;
+            this.tabPageDonorDetail.Text = "Donor Detail";
+            this.tabPageDonorDetail.UseVisualStyleBackColor = true;
+            this.tabPageDonorDetail.Click += new System.EventHandler(this.tabPageDonorDetail_Click);
             // 
             // btnCancel
             // 
@@ -256,12 +258,12 @@ namespace CRUDWinFormsMVP.Views
             this.label6.TabIndex = 13;
             this.label6.Text = "Donor phone number";
             // 
-            // txtEventDescription
+            // txtDonorPhoneNumber
             // 
-            this.txtEventDescription.Location = new System.Drawing.Point(63, 252);
-            this.txtEventDescription.Name = "txtEventDescription";
-            this.txtEventDescription.Size = new System.Drawing.Size(380, 34);
-            this.txtEventDescription.TabIndex = 12;
+            this.txtDonorPhoneNumber.Location = new System.Drawing.Point(63, 252);
+            this.txtDonorPhoneNumber.Name = "txtDonorPhoneNumber";
+            this.txtDonorPhoneNumber.Size = new System.Drawing.Size(380, 34);
+            this.txtDonorPhoneNumber.TabIndex = 12;
             // 
             // label5
             // 
@@ -273,12 +275,12 @@ namespace CRUDWinFormsMVP.Views
             this.label5.TabIndex = 11;
             this.label5.Text = "Donor Email";
             // 
-            // txtEventType
+            // txtDonorEmail
             // 
-            this.txtEventType.Location = new System.Drawing.Point(63, 187);
-            this.txtEventType.Name = "txtEventType";
-            this.txtEventType.Size = new System.Drawing.Size(183, 34);
-            this.txtEventType.TabIndex = 10;
+            this.txtDonorEmail.Location = new System.Drawing.Point(63, 187);
+            this.txtDonorEmail.Name = "txtDonorEmail";
+            this.txtDonorEmail.Size = new System.Drawing.Size(183, 34);
+            this.txtDonorEmail.TabIndex = 10;
             // 
             // label4
             // 
@@ -290,12 +292,12 @@ namespace CRUDWinFormsMVP.Views
             this.label4.TabIndex = 9;
             this.label4.Text = "Donor name:";
             // 
-            // txtEventName
+            // txtDonorName
             // 
-            this.txtEventName.Location = new System.Drawing.Point(63, 125);
-            this.txtEventName.Name = "txtEventName";
-            this.txtEventName.Size = new System.Drawing.Size(154, 34);
-            this.txtEventName.TabIndex = 8;
+            this.txtDonorName.Location = new System.Drawing.Point(63, 125);
+            this.txtDonorName.Name = "txtDonorName";
+            this.txtDonorName.Size = new System.Drawing.Size(154, 34);
+            this.txtDonorName.TabIndex = 8;
             // 
             // label3
             // 
@@ -307,15 +309,15 @@ namespace CRUDWinFormsMVP.Views
             this.label3.TabIndex = 7;
             this.label3.Text = "Donor ID:";
             // 
-            // txtEventId
+            // txtDonorId
             // 
-            this.txtEventId.Location = new System.Drawing.Point(63, 54);
-            this.txtEventId.Name = "txtEventId";
-            this.txtEventId.ReadOnly = true;
-            this.txtEventId.Size = new System.Drawing.Size(154, 34);
-            this.txtEventId.TabIndex = 6;
-            this.txtEventId.Text = "0";
-            this.txtEventId.TextChanged += new System.EventHandler(this.txtEventId_TextChanged);
+            this.txtDonorId.Location = new System.Drawing.Point(63, 54);
+            this.txtDonorId.Name = "txtDonorId";
+            this.txtDonorId.ReadOnly = true;
+            this.txtDonorId.Size = new System.Drawing.Size(154, 34);
+            this.txtDonorId.TabIndex = 6;
+            this.txtDonorId.Text = "0";
+            this.txtDonorId.TextChanged += new System.EventHandler(this.txtDonorId_TextChanged);
             // 
             // DonorView
             // 
@@ -327,16 +329,16 @@ namespace CRUDWinFormsMVP.Views
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DonorView";
-            this.Text = "EventView";
-            this.Load += new System.EventHandler(this.EventView_Load);
+            this.Text = "DonorView";
+            this.Load += new System.EventHandler(this.DonorView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPageEventList.ResumeLayout(false);
-            this.tabPageEventList.PerformLayout();
+            this.tabPageDonorList.ResumeLayout(false);
+            this.tabPageDonorList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.tabPageEventDetail.ResumeLayout(false);
-            this.tabPageEventDetail.PerformLayout();
+            this.tabPageDonorDetail.ResumeLayout(false);
+            this.tabPageDonorDetail.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -354,25 +356,25 @@ namespace CRUDWinFormsMVP.Views
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPageEventList;
+        private System.Windows.Forms.TabPage tabPageDonorList;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.TabPage tabPageEventDetail;
+        private System.Windows.Forms.TabPage tabPageDonorDetail;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEventDescription;
+        private System.Windows.Forms.TextBox txtDonorPhoneNumber;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEventType;
+        private System.Windows.Forms.TextBox txtDonorEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEventName;
+        private System.Windows.Forms.TextBox txtDonorName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEventId;
+        private System.Windows.Forms.TextBox txtDonorId;
         private System.Windows.Forms.Button btnClose;
     }
 }

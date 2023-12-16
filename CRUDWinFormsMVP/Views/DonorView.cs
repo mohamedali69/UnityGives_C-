@@ -22,7 +22,7 @@ namespace CRUDWinFormsMVP.Views
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
-            tabControl1.TabPages.Remove(tabPageEventDetail);
+            tabControl1.TabPages.Remove(tabPageDonorDetail);
             btnClose.Click += delegate { this.Close(); };
         }
 
@@ -39,17 +39,17 @@ namespace CRUDWinFormsMVP.Views
             btnAddNew.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabPageEventList);
-                tabControl1.TabPages.Add(tabPageEventDetail);
-                tabPageEventDetail.Text = "Add new Event";
+                tabControl1.TabPages.Remove(tabPageDonorList);
+                tabControl1.TabPages.Add(tabPageDonorDetail);
+                tabPageDonorDetail.Text = "Add new Event";
             };
             //Edit
             btnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabPageEventList);
-                tabControl1.TabPages.Add(tabPageEventDetail);
-                tabPageEventDetail.Text = "Edit event";
+                tabControl1.TabPages.Remove(tabPageDonorList);
+                tabControl1.TabPages.Add(tabPageDonorDetail);
+                tabPageDonorDetail.Text = "Edit event";
             };
             //Save changes
             btnSave.Click += delegate
@@ -57,8 +57,8 @@ namespace CRUDWinFormsMVP.Views
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(tabPageEventDetail);
-                    tabControl1.TabPages.Add(tabPageEventList);
+                    tabControl1.TabPages.Remove(tabPageDonorDetail);
+                    tabControl1.TabPages.Add(tabPageDonorList);
                 }
                 MessageBox.Show(Message);
             };
@@ -66,8 +66,8 @@ namespace CRUDWinFormsMVP.Views
             btnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabPageEventDetail);
-                tabControl1.TabPages.Add(tabPageEventList);
+                tabControl1.TabPages.Remove(tabPageDonorDetail);
+                tabControl1.TabPages.Add(tabPageDonorList);
             };
             //Delete
             btnDelete.Click += delegate
@@ -85,26 +85,26 @@ namespace CRUDWinFormsMVP.Views
         //Properties
         public string EventId
         {
-            get { return txtEventId.Text; }
-            set { txtEventId.Text = value; }
+            get { return txtDonorId.Text; }
+            set { txtDonorId.Text = value; }
         }
 
         public string EventName
         {
-            get { return txtEventName.Text; }
-            set { txtEventName.Text = value; }
+            get { return txtDonorName.Text; }
+            set { txtDonorName.Text = value; }
         }
 
         public string EventType
         {
-            get { return txtEventType.Text; }
-            set { txtEventType.Text = value; }
+            get { return txtDonorEmail.Text; }
+            set { txtDonorEmail.Text = value; }
         }
 
         public string EventDescription
         {
-            get { return txtEventDescription.Text; }
-            set { txtEventDescription.Text = value; }
+            get { return txtDonorPhoneNumber.Text; }
+            set { txtDonorPhoneNumber.Text = value; }
         }
 
         public string SearchValue
@@ -175,7 +175,7 @@ namespace CRUDWinFormsMVP.Views
 
         }
 
-        private void EventView_Load(object sender, EventArgs e)
+        private void DonorView_Load(object sender, EventArgs e)
         {
 
         }
@@ -195,7 +195,7 @@ namespace CRUDWinFormsMVP.Views
 
         }
 
-        private void txtEventId_TextChanged(object sender, EventArgs e)
+        private void txtDonorId_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -205,12 +205,22 @@ namespace CRUDWinFormsMVP.Views
 
         }
 
-        private void tabPageEventDetail_Click(object sender, EventArgs e)
+        private void tabPageDonorDetail_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPageDonorList_Click(object sender, EventArgs e)
         {
 
         }
