@@ -46,13 +46,13 @@ namespace CRUDWinFormsMVP.Views
             this.tabPageDonorDetail = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtDonorId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDonorPhoneNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDonorEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDonorName = new System.Windows.Forms.TextBox();
-            this.txtDonorId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageDonorList.SuspendLayout();
@@ -251,15 +251,26 @@ namespace CRUDWinFormsMVP.Views
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtDonorId
+            // 
+            this.txtDonorId.Location = new System.Drawing.Point(217, 31);
+            this.txtDonorId.Name = "txtDonorId";
+            this.txtDonorId.ReadOnly = true;
+            this.txtDonorId.Size = new System.Drawing.Size(113, 34);
+            this.txtDonorId.TabIndex = 6;
+            this.txtDonorId.Text = "0";
+            this.txtDonorId.Visible = false;
+            this.txtDonorId.TextChanged += new System.EventHandler(this.txtDonorId_TextChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(308, 224);
+            this.label6.Location = new System.Drawing.Point(338, 224);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(196, 25);
+            this.label6.Size = new System.Drawing.Size(116, 25);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Donor phone number";
+            this.label6.Text = "Event name";
             // 
             // txtDonorPhoneNumber
             // 
@@ -301,17 +312,6 @@ namespace CRUDWinFormsMVP.Views
             this.txtDonorName.Name = "txtDonorName";
             this.txtDonorName.Size = new System.Drawing.Size(389, 34);
             this.txtDonorName.TabIndex = 8;
-            // 
-            // txtDonorId
-            // 
-            this.txtDonorId.Location = new System.Drawing.Point(217, 31);
-            this.txtDonorId.Name = "txtDonorId";
-            this.txtDonorId.ReadOnly = true;
-            this.txtDonorId.Size = new System.Drawing.Size(113, 34);
-            this.txtDonorId.TabIndex = 6;
-            this.txtDonorId.Text = "0";
-            this.txtDonorId.Visible = false;
-            this.txtDonorId.TextChanged += new System.EventHandler(this.txtDonorId_TextChanged);
             // 
             // DonorView
             // 
