@@ -54,6 +54,7 @@ namespace CRUDWinFormsMVP.Views
             this.txtDonorName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDonorId = new System.Windows.Forms.TextBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageDonorList.SuspendLayout();
@@ -108,6 +109,7 @@ namespace CRUDWinFormsMVP.Views
             // 
             // tabPageDonorList
             // 
+            this.tabPageDonorList.Controls.Add(this.buttonDelete);
             this.tabPageDonorList.Controls.Add(this.dataGridView);
             this.tabPageDonorList.Controls.Add(this.label2);
             this.tabPageDonorList.Controls.Add(this.btnDelete);
@@ -319,6 +321,15 @@ namespace CRUDWinFormsMVP.Views
             this.txtDonorId.Text = "0";
             this.txtDonorId.TextChanged += new System.EventHandler(this.txtDonorId_TextChanged);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(765, 170);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(111, 40);
+            this.buttonDelete.TabIndex = 8;
+            this.buttonDelete.Text = "Dlete it";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            // 
             // DonorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -376,5 +387,6 @@ namespace CRUDWinFormsMVP.Views
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDonorId;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

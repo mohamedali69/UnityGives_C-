@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using CRUDWinFormsMVP.Models;
+using System.Windows.Forms;
 
 namespace CRUDWinFormsMVP._Repositories
 {
@@ -41,6 +42,8 @@ namespace CRUDWinFormsMVP._Repositories
                 command.CommandText = "delete from Donor where Donor_Id=@id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;           
                 command.ExecuteNonQuery();
+                int rowsAffected = command.ExecuteNonQuery();
+                MessageBox.Show(rowsAffected.ToString());
             }
         }
         public void Edit(DonorModel donorModel)

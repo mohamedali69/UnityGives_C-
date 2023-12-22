@@ -113,7 +113,7 @@ namespace CRUDWinFormsMVP.Presenters
         {
             try
             {
-                var selectedDonor = (EventModel)donorsBindingSource.Current;
+                var selectedDonor = (DonorModel)donorsBindingSource.Current;
                 repository.Delete(selectedDonor.Id);
                 view.IsSuccessful = true;
                 view.Message = "Event deleted successfully";
@@ -122,7 +122,7 @@ namespace CRUDWinFormsMVP.Presenters
             catch (Exception ex)
             {
                 view.IsSuccessful = false;
-                view.Message = "An error occurred, could not delete the Donor";
+                view.Message = ex.ToString();
             }
         }
 

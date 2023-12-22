@@ -70,6 +70,11 @@ namespace CRUDWinFormsMVP.Views
                 tabControl1.TabPages.Add(tabPageDonorList);
             };
             //Delete
+            buttonDelete.Click += delegate
+            {
+                DeleteDonor?.Invoke(this, EventArgs.Empty);
+                MessageBox.Show(Message);
+            };
             btnDelete.Click += delegate
             {               
                 var result = MessageBox.Show("Are you sure you want to delete the selected Donor?", "Warning",
