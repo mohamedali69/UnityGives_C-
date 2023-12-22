@@ -52,9 +52,7 @@ namespace CRUDWinFormsMVP.Views
             this.txtDonorEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDonorName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtDonorId = new System.Windows.Forms.TextBox();
-            this.buttonDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageDonorList.SuspendLayout();
@@ -89,12 +87,13 @@ namespace CRUDWinFormsMVP.Views
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.Location = new System.Drawing.Point(851, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(37, 30);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // tabControl1
             // 
@@ -109,7 +108,7 @@ namespace CRUDWinFormsMVP.Views
             // 
             // tabPageDonorList
             // 
-            this.tabPageDonorList.Controls.Add(this.buttonDelete);
+            this.tabPageDonorList.BackColor = System.Drawing.Color.GhostWhite;
             this.tabPageDonorList.Controls.Add(this.dataGridView);
             this.tabPageDonorList.Controls.Add(this.label2);
             this.tabPageDonorList.Controls.Add(this.btnDelete);
@@ -124,7 +123,6 @@ namespace CRUDWinFormsMVP.Views
             this.tabPageDonorList.Size = new System.Drawing.Size(884, 373);
             this.tabPageDonorList.TabIndex = 0;
             this.tabPageDonorList.Text = "Donor List";
-            this.tabPageDonorList.UseVisualStyleBackColor = true;
             this.tabPageDonorList.Click += new System.EventHandler(this.tabPageDonorList_Click);
             // 
             // dataGridView
@@ -158,45 +156,49 @@ namespace CRUDWinFormsMVP.Views
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Location = new System.Drawing.Point(767, 134);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 30);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.Color.DarkOrange;
             this.btnEdit.Location = new System.Drawing.Point(767, 98);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 30);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAddNew
             // 
             this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNew.BackColor = System.Drawing.Color.Lime;
             this.btnAddNew.Location = new System.Drawing.Point(767, 62);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(99, 30);
             this.btnAddNew.TabIndex = 2;
             this.btnAddNew.Text = "Add new";
-            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSearch.Location = new System.Drawing.Point(668, 27);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(99, 30);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
@@ -211,16 +213,16 @@ namespace CRUDWinFormsMVP.Views
             // 
             // tabPageDonorDetail
             // 
+            this.tabPageDonorDetail.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tabPageDonorDetail.Controls.Add(this.btnCancel);
             this.tabPageDonorDetail.Controls.Add(this.btnSave);
+            this.tabPageDonorDetail.Controls.Add(this.txtDonorId);
             this.tabPageDonorDetail.Controls.Add(this.label6);
             this.tabPageDonorDetail.Controls.Add(this.txtDonorPhoneNumber);
             this.tabPageDonorDetail.Controls.Add(this.label5);
             this.tabPageDonorDetail.Controls.Add(this.txtDonorEmail);
             this.tabPageDonorDetail.Controls.Add(this.label4);
             this.tabPageDonorDetail.Controls.Add(this.txtDonorName);
-            this.tabPageDonorDetail.Controls.Add(this.label3);
-            this.tabPageDonorDetail.Controls.Add(this.txtDonorId);
             this.tabPageDonorDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageDonorDetail.Location = new System.Drawing.Point(4, 34);
             this.tabPageDonorDetail.Name = "tabPageDonorDetail";
@@ -228,12 +230,11 @@ namespace CRUDWinFormsMVP.Views
             this.tabPageDonorDetail.Size = new System.Drawing.Size(884, 373);
             this.tabPageDonorDetail.TabIndex = 1;
             this.tabPageDonorDetail.Text = "Donor Detail";
-            this.tabPageDonorDetail.UseVisualStyleBackColor = true;
             this.tabPageDonorDetail.Click += new System.EventHandler(this.tabPageDonorDetail_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(260, 310);
+            this.btnCancel.Location = new System.Drawing.Point(423, 310);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(183, 44);
             this.btnCancel.TabIndex = 15;
@@ -242,7 +243,7 @@ namespace CRUDWinFormsMVP.Views
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(64, 310);
+            this.btnSave.Location = new System.Drawing.Point(217, 310);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(183, 44);
             this.btnSave.TabIndex = 14;
@@ -254,7 +255,7 @@ namespace CRUDWinFormsMVP.Views
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(59, 224);
+            this.label6.Location = new System.Drawing.Point(308, 224);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(196, 25);
             this.label6.TabIndex = 13;
@@ -262,16 +263,16 @@ namespace CRUDWinFormsMVP.Views
             // 
             // txtDonorPhoneNumber
             // 
-            this.txtDonorPhoneNumber.Location = new System.Drawing.Point(63, 252);
+            this.txtDonorPhoneNumber.Location = new System.Drawing.Point(217, 252);
             this.txtDonorPhoneNumber.Name = "txtDonorPhoneNumber";
-            this.txtDonorPhoneNumber.Size = new System.Drawing.Size(380, 34);
+            this.txtDonorPhoneNumber.Size = new System.Drawing.Size(389, 34);
             this.txtDonorPhoneNumber.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(59, 162);
+            this.label5.Location = new System.Drawing.Point(338, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 25);
             this.label5.TabIndex = 11;
@@ -279,16 +280,16 @@ namespace CRUDWinFormsMVP.Views
             // 
             // txtDonorEmail
             // 
-            this.txtDonorEmail.Location = new System.Drawing.Point(63, 187);
+            this.txtDonorEmail.Location = new System.Drawing.Point(217, 181);
             this.txtDonorEmail.Name = "txtDonorEmail";
-            this.txtDonorEmail.Size = new System.Drawing.Size(183, 34);
+            this.txtDonorEmail.Size = new System.Drawing.Size(389, 34);
             this.txtDonorEmail.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 102);
+            this.label4.Location = new System.Drawing.Point(338, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 25);
             this.label4.TabIndex = 9;
@@ -296,39 +297,21 @@ namespace CRUDWinFormsMVP.Views
             // 
             // txtDonorName
             // 
-            this.txtDonorName.Location = new System.Drawing.Point(63, 125);
+            this.txtDonorName.Location = new System.Drawing.Point(217, 95);
             this.txtDonorName.Name = "txtDonorName";
-            this.txtDonorName.Size = new System.Drawing.Size(154, 34);
+            this.txtDonorName.Size = new System.Drawing.Size(389, 34);
             this.txtDonorName.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Donor ID:";
             // 
             // txtDonorId
             // 
-            this.txtDonorId.Location = new System.Drawing.Point(63, 54);
+            this.txtDonorId.Location = new System.Drawing.Point(217, 31);
             this.txtDonorId.Name = "txtDonorId";
             this.txtDonorId.ReadOnly = true;
-            this.txtDonorId.Size = new System.Drawing.Size(154, 34);
+            this.txtDonorId.Size = new System.Drawing.Size(113, 34);
             this.txtDonorId.TabIndex = 6;
             this.txtDonorId.Text = "0";
+            this.txtDonorId.Visible = false;
             this.txtDonorId.TextChanged += new System.EventHandler(this.txtDonorId_TextChanged);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(765, 170);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(111, 40);
-            this.buttonDelete.TabIndex = 8;
-            this.buttonDelete.Text = "Dlete it";
-            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
             // DonorView
             // 
@@ -384,9 +367,7 @@ namespace CRUDWinFormsMVP.Views
         private System.Windows.Forms.TextBox txtDonorEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDonorName;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDonorId;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button buttonDelete;
     }
 }

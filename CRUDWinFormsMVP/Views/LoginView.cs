@@ -76,5 +76,10 @@ namespace CRUDWinFormsMVP.Views
         {
 
         }
+
+        private void passwordBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

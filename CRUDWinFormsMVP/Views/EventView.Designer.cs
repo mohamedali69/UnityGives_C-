@@ -47,13 +47,12 @@ namespace CRUDWinFormsMVP.Views
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtEventDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEventType = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEventName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtEventId = new System.Windows.Forms.TextBox();
+            this.txtEventDescription = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageEventList.SuspendLayout();
@@ -154,45 +153,49 @@ namespace CRUDWinFormsMVP.Views
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Location = new System.Drawing.Point(767, 134);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 30);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.Color.DarkOrange;
             this.btnEdit.Location = new System.Drawing.Point(767, 98);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 30);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAddNew
             // 
             this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNew.BackColor = System.Drawing.Color.Lime;
             this.btnAddNew.Location = new System.Drawing.Point(767, 62);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(99, 30);
             this.btnAddNew.TabIndex = 2;
             this.btnAddNew.Text = "Add new";
-            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSearch.Location = new System.Drawing.Point(668, 27);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(99, 30);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
@@ -207,15 +210,15 @@ namespace CRUDWinFormsMVP.Views
             // 
             // tabPageEventDetail
             // 
+            this.tabPageEventDetail.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.tabPageEventDetail.Controls.Add(this.txtEventDescription);
             this.tabPageEventDetail.Controls.Add(this.btnCancel);
             this.tabPageEventDetail.Controls.Add(this.btnSave);
             this.tabPageEventDetail.Controls.Add(this.label6);
-            this.tabPageEventDetail.Controls.Add(this.txtEventDescription);
             this.tabPageEventDetail.Controls.Add(this.label5);
             this.tabPageEventDetail.Controls.Add(this.txtEventType);
             this.tabPageEventDetail.Controls.Add(this.label4);
             this.tabPageEventDetail.Controls.Add(this.txtEventName);
-            this.tabPageEventDetail.Controls.Add(this.label3);
             this.tabPageEventDetail.Controls.Add(this.txtEventId);
             this.tabPageEventDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageEventDetail.Location = new System.Drawing.Point(4, 34);
@@ -224,12 +227,11 @@ namespace CRUDWinFormsMVP.Views
             this.tabPageEventDetail.Size = new System.Drawing.Size(884, 373);
             this.tabPageEventDetail.TabIndex = 1;
             this.tabPageEventDetail.Text = "Event Detail";
-            this.tabPageEventDetail.UseVisualStyleBackColor = true;
             this.tabPageEventDetail.Click += new System.EventHandler(this.tabPageEventDetail_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(260, 247);
+            this.btnCancel.Location = new System.Drawing.Point(484, 315);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(183, 44);
             this.btnCancel.TabIndex = 15;
@@ -238,7 +240,7 @@ namespace CRUDWinFormsMVP.Views
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(63, 247);
+            this.btnSave.Location = new System.Drawing.Point(210, 315);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(183, 44);
             this.btnSave.TabIndex = 14;
@@ -250,24 +252,17 @@ namespace CRUDWinFormsMVP.Views
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(59, 175);
+            this.label6.Location = new System.Drawing.Point(205, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 13;
             this.label6.Text = "Event Description";
             // 
-            // txtEventDescription
-            // 
-            this.txtEventDescription.Location = new System.Drawing.Point(63, 198);
-            this.txtEventDescription.Name = "txtEventDescription";
-            this.txtEventDescription.Size = new System.Drawing.Size(380, 34);
-            this.txtEventDescription.TabIndex = 12;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 102);
+            this.label5.Location = new System.Drawing.Point(449, 86);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 25);
             this.label5.TabIndex = 11;
@@ -275,16 +270,16 @@ namespace CRUDWinFormsMVP.Views
             // 
             // txtEventType
             // 
-            this.txtEventType.Location = new System.Drawing.Point(260, 125);
+            this.txtEventType.Location = new System.Drawing.Point(454, 114);
             this.txtEventType.Name = "txtEventType";
-            this.txtEventType.Size = new System.Drawing.Size(183, 34);
+            this.txtEventType.Size = new System.Drawing.Size(213, 34);
             this.txtEventType.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 102);
+            this.label4.Location = new System.Drawing.Point(205, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 25);
             this.label4.TabIndex = 9;
@@ -292,30 +287,29 @@ namespace CRUDWinFormsMVP.Views
             // 
             // txtEventName
             // 
-            this.txtEventName.Location = new System.Drawing.Point(63, 125);
+            this.txtEventName.Location = new System.Drawing.Point(210, 114);
             this.txtEventName.Name = "txtEventName";
-            this.txtEventName.Size = new System.Drawing.Size(154, 34);
+            this.txtEventName.Size = new System.Drawing.Size(205, 34);
             this.txtEventName.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 25);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Event ID:";
             // 
             // txtEventId
             // 
-            this.txtEventId.Location = new System.Drawing.Point(63, 54);
+            this.txtEventId.Location = new System.Drawing.Point(210, 39);
             this.txtEventId.Name = "txtEventId";
             this.txtEventId.ReadOnly = true;
             this.txtEventId.Size = new System.Drawing.Size(154, 34);
             this.txtEventId.TabIndex = 6;
             this.txtEventId.Text = "0";
+            this.txtEventId.Visible = false;
             this.txtEventId.TextChanged += new System.EventHandler(this.txtEventId_TextChanged);
+            // 
+            // txtEventDescription
+            // 
+            this.txtEventDescription.Location = new System.Drawing.Point(210, 203);
+            this.txtEventDescription.Name = "txtEventDescription";
+            this.txtEventDescription.Size = new System.Drawing.Size(457, 96);
+            this.txtEventDescription.TabIndex = 16;
+            this.txtEventDescription.Text = "";
             // 
             // EventView
             // 
@@ -366,13 +360,12 @@ namespace CRUDWinFormsMVP.Views
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEventDescription;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEventType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEventName;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEventId;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.RichTextBox txtEventDescription;
     }
 }

@@ -42,8 +42,8 @@ namespace CRUDWinFormsMVP._Repositories
                 command.CommandText = "delete from Donor where Donor_Id=@id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;           
                 command.ExecuteNonQuery();
-                int rowsAffected = command.ExecuteNonQuery();
-                MessageBox.Show(rowsAffected.ToString());
+                //int rowsAffected = command.ExecuteNonQuery();
+                //MessageBox.Show(rowsAffected.ToString());
             }
         }
         public void Edit(DonorModel donorModel)

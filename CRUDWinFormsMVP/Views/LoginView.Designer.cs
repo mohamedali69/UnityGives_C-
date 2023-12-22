@@ -49,6 +49,7 @@
             this.passwordBox.Size = new System.Drawing.Size(304, 22);
             this.passwordBox.TabIndex = 1;
             this.passwordBox.Text = "Votre mot de passe";
+            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // loginButton
             // 
@@ -64,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordBox);
