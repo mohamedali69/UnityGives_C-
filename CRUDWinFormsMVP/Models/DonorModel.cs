@@ -40,8 +40,8 @@ namespace CRUDWinFormsMVP.Models
             set { email = value; }
         }
 
-        [DisplayName("Donor phone number")]
-        [Required(ErrorMessage = "Donor phone number is requerid")]
+        [DisplayName("Event name")]
+        [Required(ErrorMessage = "Event name is requerid")]
         public string PhoneNumber
         {
             get { return phoneNumber; }
